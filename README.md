@@ -41,6 +41,8 @@ dotnet new webapi -n template-api-server
 dotnet nuget add source --name nuget.org https://api.nuget.org/v3/index.json
 
 dotnet sln add .\template-api-server\template-api-server.csproj
+
+dotnet add package Swashbuckle.AspNetCore.Annotations
 ```
 
 

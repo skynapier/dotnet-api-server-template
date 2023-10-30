@@ -1,6 +1,12 @@
+
+
+using System.Text.Json;
+
 public class ClientService : IClientService
 {
+    private readonly ILogger<ClientService> _logger;
     private readonly List<Client> clients = new List<Client>
+
 {
     new Client
     {
@@ -25,13 +31,43 @@ public class ClientService : IClientService
     }
 };
 
+    public ClientService(ILogger<ClientService> logger)
+    {
+        _logger = logger;
+
+    }
+
+    public Client GetClientById(Guid id)
+    {
+        var client = clients.First(c => c.Id == id);
+        if (client == null)
+        {
+            throw new ClientException(ClientErrorType.NotFound, $"Client with ID {id} not found.");
+        }
+
+        return client;
+    }
+
+    public Client? GetClientByName(string clientName)
+    {
+        return clients.FirstOrDefault(c => c.Name == clientName);
+    }
+
+    public IEnumerable<Client> GetClientsCreatedBefore(DateTime time)
+    {
+        return clients.Where(c => c.CreatedAt < time);
+    }
+
     public IEnumerable<Client> GetAllClients()
     {
+        _logger.LogInformation("Fetching all clients.");
         return clients;
     }
 
     public void AddClient(Client client)
     {
         clients.Add(client);
+         _logger.LogInformation("Updated Clients {Clients}",  JsonSerializer.Serialize(clients));
     }
+
 }
