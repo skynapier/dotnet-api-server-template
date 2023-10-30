@@ -21,12 +21,21 @@ public class ClientController : ControllerBase
     [SwaggerOperation(Summary = "Retrieve a client by ID", Description = "Fetches details of a client by their ID.")]
     public ActionResult<Client> GetClientById(Guid id)
     {
-        var client = _clientService.GetClientById(id);
-        if (client == null)
+        try
         {
-            return NotFound($"Client with ID {id} not found.");
+            var client = _clientService.GetClientById(id);
+            return Ok(client);
         }
-        return Ok(client);
+        catch (ClientException ex)
+        {
+            if (ex.ErrorType == ClientErrorType.NotFound)
+            {
+                return NotFound(ex.Message);
+            }
+            // Handle other types of ClientException if needed
+            throw;
+        }
+
     }
 
     [HttpGet("{clientName}")]

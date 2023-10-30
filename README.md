@@ -70,6 +70,8 @@ dotnet add package Moq
 
 //Utilities to test ASP.NET Core MVC applications.
 dotnet add package Microsoft.AspNetCore.Mvc.Testing
+
+dotnet add package Microsoft.AspNetCore.TestHost
 ```
 
 Give examples
