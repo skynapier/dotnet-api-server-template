@@ -28,4 +28,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\template-api-server.Core\template-api-server.Core.csproj" />
+    <ProjectReference Include="..\template-api-server.Data\template-api-server.Data.csproj" />
+    <ProjectReference Include="..\template-api-server.Services\template-api-server.Services.csproj" />
+  </ItemGroup>
+
 </Project>

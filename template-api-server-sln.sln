@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-api-server", "temp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-api-server.Tests", "template-api-server.Tests\template-api-server.Tests.csproj", "{8E648183-6DBF-46B1-AD9D-1A33491D98F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-api-server.Core", "template-api-server.Core\template-api-server.Core.csproj", "{96AA7096-3A1A-43D8-90EF-D8D21A884697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-api-server.Data", "template-api-server.Data\template-api-server.Data.csproj", "{82D4BB91-6A7E-4855-A501-CAD0E0EA2FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "template-api-server.Services", "template-api-server.Services\template-api-server.Services.csproj", "{38610431-6BC6-48AA-AD3E-711172301145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +30,17 @@ Global
 		{8E648183-6DBF-46B1-AD9D-1A33491D98F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E648183-6DBF-46B1-AD9D-1A33491D98F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E648183-6DBF-46B1-AD9D-1A33491D98F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96AA7096-3A1A-43D8-90EF-D8D21A884697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96AA7096-3A1A-43D8-90EF-D8D21A884697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96AA7096-3A1A-43D8-90EF-D8D21A884697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96AA7096-3A1A-43D8-90EF-D8D21A884697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82D4BB91-6A7E-4855-A501-CAD0E0EA2FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D4BB91-6A7E-4855-A501-CAD0E0EA2FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D4BB91-6A7E-4855-A501-CAD0E0EA2FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D4BB91-6A7E-4855-A501-CAD0E0EA2FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38610431-6BC6-48AA-AD3E-711172301145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38610431-6BC6-48AA-AD3E-711172301145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38610431-6BC6-48AA-AD3E-711172301145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38610431-6BC6-48AA-AD3E-711172301145}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
