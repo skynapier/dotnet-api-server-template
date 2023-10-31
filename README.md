@@ -83,6 +83,9 @@ Add references from the API project to the Core, Data, and Services
 dotnet add .\template-api-server\template-api-server.csproj reference .\template-api-server.Core\template-api-server.Core.csproj
 dotnet add .\template-api-server\template-api-server.csproj reference .\template-api-server.Data\template-api-server.Data.csproj
 dotnet add .\template-api-server\template-api-server.csproj reference .\template-api-server.Services\template-api-server.Services.csproj
+
+dotnet add .\template-api-server.Services\template-api-server.Services.csproj reference .\template-api-server.Core\template-api-server.Core.csproj
+dotnet add .\template-api-server.Data\template-api-server.Data.csproj reference .\template-api-server.Core\template-api-server.Core.csproj
 ```
 
 
@@ -141,6 +144,7 @@ Tests Project: Contains unit tests, integration tests, etc., for the above proje
 DI:
 
 ```
+
 Transient:
 A new instance of the service is created each time it is requested.
 Suitable for lightweight, stateless services.
@@ -157,4 +161,36 @@ Suitable for services that need to maintain state within a single request.
 Singleton:
 A single instance of the service is created and shared across all requests and uses. This single instance exists for the lifetime of the application.
 Suitable for services that need to maintain state across multiple requests and for the entire lifetime of the application.
+```
+
+
+Directory Structure:
+```
+
+/Core
+/Entities or /Models: For domain entities.
+/Interfaces: For repository, domain service, and application service interfaces.
+/ValueObjects: For value objects, if you have any.
+/Enums: For any domain-specific enumerations.
+```
+
+```
+/Data
+/Repositories: Contains the implementations of the repository interfaces.
+/Configurations: If you're using Entity Framework, this might contain configurations or mappings.
+/Migrations: For database migrations, if you're using a tool that supports them.
+```
+
+```
+/Services
+/DomainServices: For services that contain business logic.
+/ApplicationServices: For services that might orchestrate multiple domain services or repositories.
+/DTOs: Data Transfer Objects, if you use them.
+```
+
+```
+/API or /Web: If you have a web layer.
+/Controllers: For your API controllers.
+/Middleware: For custom middleware.
+/ViewModels: If you use view models in a web application.
 ```
