@@ -122,9 +122,24 @@ Dev
 export ASPNETCORE_ENVIRONMENT=Development / set ASPNETCORE_ENVIRONMENT=Development
 
 dotnet run --launch-profile https
+dotnet run --project ./template-api-server/template-api-server.csproj
 ```
 
+Setup DB env
+```
+docker-compose up -d
+docker-compose down
+docker-compose down --rmi all
+docker exec -it [CONTAINER_NAME_OR_ID] bash
+psql -U admin -d pgdb
+```
 
+Build Docker image
+```
+docker build -t dotnet_template_api_server .
+docker run --rm -it -p 5000:5000 -p 5001:5001 -e ASPNETCORE_ENVIRONMENT=Development -e ASPNETCORE_URLS="https://localhost:5001;http://localhost:5000" -e USE_HTTPS=true dotnet_template_api_server
+
+```
 
 ### Notes  <a name = "notes"></a>
 
